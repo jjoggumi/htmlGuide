@@ -1,0 +1,16 @@
+system	file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+system	file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+system	file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+system	file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+system	file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+system	file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=openssl
+system	file:C:/Program Files/Git/etc/gitconfig	http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+system	file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+system	file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+system	file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+system	file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+system	file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+system	file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+system	file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+global	file:C:/Users/jjogg/.gitconfig	user.name=key
+global	file:C:/Users/jjogg/.gitconfig	user.email=jjoggumi@gmail.com
