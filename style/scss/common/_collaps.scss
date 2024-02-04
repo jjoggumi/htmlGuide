@@ -1,0 +1,36 @@
+/* collaps */
+.collapsSet{
+	.collapsible {
+		text-align: left;
+		font-weight: var(--font-bold);
+		width: 100%;
+	  
+		&:after {
+			content: "";
+			display: block;
+			width: .8rem;
+			height: .8rem;
+			float: right;
+			margin: .4rem .4rem .4rem 1.6rem;
+			border-right: 2px solid #333;
+			border-bottom: 2px solid #333;
+			transform: rotate(45deg);
+			transition: .5s;
+		}
+	}
+
+	.collapsCon {
+	  max-height: 0;
+	  overflow: hidden;
+	  transition: max-height .2s ease-out;
+	}
+		
+	.collapsible.active::after {
+		transform: rotate(-135deg);
+		margin: .8rem .4rem .4rem 1.6rem;
+	}
+	
+	&.active .collapsCon {
+		max-height: 100%;
+	}
+}

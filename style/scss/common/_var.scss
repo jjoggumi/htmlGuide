@@ -1,0 +1,54 @@
+:root{	
+	/* Color */
+	--color-primary:#147ADA;    /* 파랑 */
+	--color-secondary:#00529f;  /* 중파랑 */
+	--color-third:#132A4C;      /* 진파랑 */
+	--color-success:#43618E;    /* 채도낮은 파랑 */
+	--color-info:#ff9900;       /* 보색 */
+	--color-danger:#dc3545;     /* 빨간 */
+	--color-dark:#444;          /* 진회색 */
+	--color-gray:#ddd;          /* 회색 */
+	--color-default:#898989;    /* 중회색 */		
+	--color-black:#000;
+	--color-white:#fff;
+	
+	/* font */
+	--font-tit:"NanumSquare";
+	--font-body:"Nanum Gothic", sans-serif;
+	--font-normal:400;
+	--font-bold:600;
+	--font-color:#111;
+	
+	/* content width */
+	--con-width:1400px;	
+}
+/* Color */
+$color-primary:#147ADA !default;    /* 파랑 */
+$color-secondary:#00529f !default;  /* 중파랑 */
+$color-third:#132A4C !default;      /* 진파랑 */
+$color-success:#43618E !default;    /* 채도낮은 파랑 */
+$color-info:#ff9900 !default;       /* 보색 */
+$color-danger:#dc3545 !default;     /* 빨간 */
+$color-dark:#444 !default;          /* 진회색 */
+$color-gray:#ddd !default;          /* 회색 */
+$color-default:#898989 !default;    /* 중회색 */
+
+$color-black:#000 !default;
+$color-white:#fff !default;
+
+/* font */
+$font-tit:"NanumSquare" !default;
+$font-body:"Nanum Gothic", sans-serif;
+$font-normal:400;
+$font-bold:600;
+$font-color:#111;
+
+/* content width */
+$con-width:1400px;
+
+/* Break Point */
+$xsBp: 576px;
+$smBp: 768px;
+$mdBp: 1024px;
+$lgBp: 1290px;
+$xlBp: 1440px;
