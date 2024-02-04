@@ -1,0 +1,168 @@
+/* Button Style */
+@mixin btnStyle($bg, $font:$color-white, $border:$bg, $focus) {
+	color:$font;
+	background: $bg;
+	border-color:$border;	
+	&:hover:not(.disabled,:disabled) {
+		background:darken($bg,10%);
+		border-color: darken($border,10%);
+		transition: all 0.3s ease;
+	}
+	&:active:not(.disabled,:disabled) {
+	    background:darken($bg,10%);
+		border-color: darken($bg,10%);
+		transition: all 0.3s ease;
+	  } 
+	&:focus:not(.disabled,:disabled) {
+		box-shadow:0 0 0 3px $focus;
+	}
+	
+	> span.ico{background-color:darken($bg,10%);}
+}
+
+button {
+	cursor: pointer; 
+	font-weight: $font-bold; 
+	&:focus {outline: 0;}	
+	span {pointer-events: none;}  
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	border-radius: .3rem;
+	border:1px solid #ccc;
+	background-color: transparent;
+	text-align: center;
+	vertical-align: middle;
+	font-family: var(--font-body);
+	font-weight: var(--font-bold); 
+	font-size: 1.5rem;
+	line-height: 1.5;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	word-break: keep-all;
+	
+	@include btnStyle(transparent, $font:#212529, $border:#ccc, $focus:rgb(119 119 119 / 31%));
+	
+	&.disabled, 
+	&:disabled{
+		color: #999;
+		pointer-events: none;
+		background-color: rgb(0 0 0 / 17%);
+		border-color:#ddd;
+		opacity: 0.65;
+	}		
+	
+	/* 버튼 사이즈 */
+	&-sm { padding: 0.2rem 0.7rem; font-size: 1.4rem; }
+	&-lg { padding: 0.7rem 1.5rem; font-size: 1.6rem; }
+	
+	/* 버튼 스타일 */
+	&-primary   { @include btnStyle($color-primary, $focus:rgb(20 122 218 / 35%)); }
+	&-secondary { @include btnStyle($color-secondary, $focus:rgb(119 119 119 / 31%)); }
+	&-third     { @include btnStyle($color-third, $focus:rgb(119 119 119 / 31%)); }
+	&-success   { @include btnStyle($color-success, $focus:rgb(0 76 147 / 30%)); }
+	&-info      { @include btnStyle($color-info, $focus:rgb(255 153 0 / 31%)); }
+	&-danger    { @include btnStyle($color-danger, $focus:rgb(220 53 69 / 30%)); }
+	&-dark      { @include btnStyle($color-dark, $focus:rgb(68 68 68 / 30%)); }
+	&-sky       { @include btnStyle(#C1E1FF, $font:#006ACC, $border:#C1E1FF, $focus:rgb(156 207 255 / 30%)); }
+	&-default   { @include btnStyle($color-default, $focus:rgb(217 217 217 / 30%)); }
+	&-gray      { @include btnStyle($color-gray, $font:$color-dark, $border:$color-default, $focus:rgb(217 217 217 / 30%)); }
+	&-link      { border:0; border-radius: 0; }
+		
+	/* 아이콘 버튼 */
+	&[class*=btn-ico] {
+		display: inline-flex; align-items: center; position: relative;
+	  
+		> .ico {
+			position: absolute; top: 0; bottom: 0; width: 3.2rem; display: flex; justify-content: center; align-items: center;
+			
+			&::after{display:block;content:'';width:1.8rem;height:1.8rem; background-color:#333;-webkit-mask-size: 100%;}
+			
+			&.clip::after, &.clipW::after  {-webkit-mask-image: url(/images/svg/icoClip.svg); mask-image: url(/images/svg/icoClip.svg); }
+			&.clipW::after {background-color: #fff;}
+			&.down::after, &.downW::after  {-webkit-mask-image: url(/images/svg/icoDown.svg); mask-image: url(/images/svg/icoDown.svg); }
+			&.downW::after {background-color: #fff;}			
+			&.up::after, &.upW::after  { -webkit-mask-image: url(/images/svg/icoUp.svg);mask-image: url(/images/svg/icoUp.svg); }	
+			&.upW::after {background-color: #fff;}			
+			&.camera::after,&.cameraW::after  { -webkit-mask-image: url(/images/svg/icoCamera.svg);mask-image: url(/images/svg/icoCamera.svg);}	
+			&.cameraW::after {background-color: #fff;}
+			&.plus::after,&.plusW::after  { -webkit-mask-image: url(/images/svg/icoPlus.svg);mask-image: url(/images/svg/icoPlus.svg);}	
+			&.plusW::after {background-color: #fff;}
+			&.minus::after,&.minusW::after  { -webkit-mask-image: url(/images/svg/icoMinus.svg);mask-image: url(/images/svg/icoMinus.svg);}	
+			&.minusW::after {background-color: #fff;}
+			&.list::after,&.listW::after   { -webkit-mask-image: url(/images/svg/icoList.svg);mask-image: url(/images/svg/icoList.svg);}	
+			&.listW::after {background-color: #fff;}
+			&.del::after,&.delW::after  { -webkit-mask-image: url(/images/svg/icoDelete.svg);mask-image: url(/images/svg/icoDelete.svg);}	
+			&.delW::after {background-color: #fff;}
+			&.edit::after,&.editW::after  { -webkit-mask-image: url(/images/svg/icoEdit.svg);mask-image: url(/images/svg/icoEdit.svg);}	
+			&.editW::after {background-color: #fff;}
+			&.save::after,&.saveW::after  { -webkit-mask-image: url(/images/svg/icoSave.svg);mask-image: url(/images/svg/icoSave.svg);}	
+			&.saveW::after {background-color: #fff;}
+			&.write::after,&.writeW::after  { -webkit-mask-image: url(/images/svg/icoPen.svg);mask-image: url(/images/svg/icoPen.svg);}	
+			&.writeW::after {background-color: #fff;}
+			&.print::after,&.printW::after   { -webkit-mask-image: url(/images/svg/icoPrint.svg);mask-image: url(/images/svg/icoPrint.svg);}	
+			&.printW::after {background-color: #fff;}
+			&.map::after,&.mapW::after   { -webkit-mask-image: url(/images/svg/icoMapLocation.svg);mask-image: url(/images/svg/icoMapLocation.svg);}	
+			&.mapW::after {background-color: #fff;}
+			&.close::after,&.closeW::after  { -webkit-mask-image: url(/images/svg/icoCloseS.svg);mask-image: url(/images/svg/icoCloseS.svg);}  
+			&.closeW::after {background-color: #fff;}
+			&.newwin::after,&.newwinW::after  { -webkit-mask-image: url(/images/svg/icoNewwin.svg);mask-image: url(/images/svg/icoNewwin.svg);}  
+			&.newwinW::after {background-color: #fff;} 
+			&.link::after,&.linkW::after  { -webkit-mask-image: url(/images/svg/icoLink.svg);mask-image: url(/images/svg/icoLink.svg);}  
+			&.linkW::after {background-color: #fff;} 			
+			&.check::after,&.checkW::after  { -webkit-mask-image: url(/images/svg/icoCheck.svg);mask-image: url(/images/svg/icoCheck.svg);}  
+			&.checkW::after {background-color: #fff;} 
+			&.redo::after,&.redoW::after  { -webkit-mask-image: url(/images/svg/icoRedo.svg);mask-image: url(/images/svg/icoRedo.svg);}  
+			&.redoW::after {background-color: #fff;} 
+			&.email::after,&.emailW::after  { -webkit-mask-image: url(/images/svg/icoEmail.svg);mask-image: url(/images/svg/icoEmail.svg);}  
+			&.emailW::after {background-color: #fff;} 			
+			&.chart::after,&.chartW::after  { -webkit-mask-image: url(/images/svg/icoChart.svg);mask-image: url(/images/svg/icoChart.svg);}  
+			&.chartW::after {background-color: #fff;} 		
+			&.file::after,&.fileW::after  { -webkit-mask-image: url(/images/svg/icoFile.svg);mask-image: url(/images/svg/icoFile.svg);}  
+			&.fileW::after {background-color: #fff;} 
+		}
+		
+		&.btn-lg > .ico { 
+			width: 3.6rem; 		
+			&::after{width:2rem;height:2rem;}
+		}
+		&.btn-sm > .ico {
+			width: 2.4rem;			
+			&::after{width:1.6rem;height:1.6rem;}
+		}
+	}
+	
+	&.btn-ico-l {
+	  padding-left: 4.4rem;
+	  
+	   > span { left: 0; }
+	}
+	
+	&.btn-ico-r {
+	  padding-right: 4.4rem;
+	  
+	   > span { right: 0; }
+	}
+	
+	/* 버튼 그룹 */
+	&-group {
+		position: relative; display: inline-flex; vertical-align: middle;
+	  
+		> &:not(:first-child), 
+		> .btn:not(:first-child) { margin-left: -1px; }
+		
+		> &:not(:last-child) > .btn, 
+		> .btn:not(:last-child):not(.dropdown-toggle) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+		
+		> &:not(:first-child) > .btn,
+		> .btn:nth-child(n+3),
+		> :not(.btn-check) + .btn { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+	}
+}
